@@ -1,13 +1,24 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+
+
+//import components
 import Footer from './components/Footer';
 import Header from "./components/Header";
-import Home from './components/Home';
+
+//import pages
+import Home from './pages/Home';
+import PropertyDetails from './pages/PropertyDetails';
+
 
 function App() {
   return (
-    <div className="App">
+    <div className='max-w-[1440px] mx-auto bg-white'>
       <Header/>
-      <Home/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/property/:id' element={<PropertyDetails/>}/>
+      </Routes>
       <Footer/>
 
     </div>
